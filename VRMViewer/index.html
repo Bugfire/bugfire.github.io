@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | VRMViewer</title>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      UnityLoader.SystemInfo.mobile = false;
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json");
+      var w = 0;
+      var h = 0;
+      setInterval(function() {
+        var ww = window.innerWidth || document.documentElement.clientWidth;
+        var hh = window.innerHeight || document.documentElement.clientHeight;
+        if (ww === w && hh === h) return;
+        w = ww;
+        h = hh;
+        var c = document.querySelector("canvas");
+        var g = document.querySelector("#gameContainer");
+        c.style.width = g.style.width = w + "px";
+        c.style.height = g.style.height = h + "px";
+      }, 1000);
+    </script>
+  </head>
+  <body style="margin:0px;overflow:hidden">
+    <div id="gameContainer" style="width: 100%; height: 100%; margin: 0"></div>
+  </body>
+</html>

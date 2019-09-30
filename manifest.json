@@ -1,0 +1,40 @@
+{
+  "short_name": "Bugfire",
+  "name": "Bugfire.dev",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "res/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "res/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "res/logo192m.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "res/logo512m.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "description": "Bugfire.dev App",
+  "dir": "ltr",
+  "lang": "ja-jp",
+  "theme_color": "#22aa22",
+  "background_color": "#ffffff"
+}
