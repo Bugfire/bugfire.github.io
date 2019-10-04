@@ -2,9 +2,16 @@
 <feed xmlns='http://www.w3.org/2005/Atom' xml:lang='ja'>
   <id>tag:bugfire.dev/blog,2019:feed</id>
   <title>Bugfire.dev/blog</title>
-  <updated>2019-09-29T15:00:01.000Z</updated>
+  <updated>2019-10-03T15:00:00.000Z</updated>
   <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog" />
   <link rel="self" type="application/atom+xml" href="https://bugfire.dev/atom.xml" />
+  <entry>
+    <id>tag:bugfire.dev/blog,2019:entry://2019/10/04/ContainerStationApi</id>
+    <title>Container Station API</title>
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2019/10/04/ContainerStationApi" />
+    <updated>2019-10-03T15:00:00.000Z</updated>
+    <summary>Container Station (QNAP) に Web API あるのですね</update>
+  </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2019/09/30/Qnap20190930</id>
     <title>QNAP日記 2019-09-30</title>
