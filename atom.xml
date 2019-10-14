@@ -3,103 +3,103 @@
   <id>tag:bugfire.dev/blog,2019:feed</id>
   <title>Bugfire.dev/blog</title>
   <updated>2019-10-03T15:00:00.000Z</updated>
-  <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog" />
+  <link rel="alternate" type="text/html" href="https://bugfire.dev/blog" />
   <link rel="self" type="application/atom+xml" href="https://bugfire.dev/atom.xml" />
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2019/10/04/ContainerStationApi</id>
     <title>Container Station API</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2019/10/04/ContainerStationApi" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2019/10/04/ContainerStationApi" />
     <updated>2019-10-03T15:00:00.000Z</updated>
     <summary>Container Station (QNAP) に Web API あるのですね</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2019/09/30/Qnap20190930</id>
     <title>QNAP日記 2019-09-30</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2019/09/30/Qnap20190930" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2019/09/30/Qnap20190930" />
     <updated>2019-09-29T15:00:01.000Z</updated>
     <summary>家で動かしている QNAP を色々更新していました</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2019/09/30/DockerComposeOnQnap</id>
     <title>DockerCompose on QNAP</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2019/09/30/DockerComposeOnQnap" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2019/09/30/DockerComposeOnQnap" />
     <updated>2019-09-29T15:00:00.000Z</updated>
     <summary>QNAP が DockerCompose 対応してる、ということに、最近ようやく気が付きました</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2019/09/27/React</id>
     <title>React</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2019/09/27/React" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2019/09/27/React" />
     <updated>2019-09-26T15:00:00.000Z</updated>
     <summary>長いお休みをいただいているので、練習がてら、このサイト(Bugfire.dev)を React で SPA/PWA 化しました</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2019/02/28/VRMViewer1</id>
     <title>Unity/WebGLでVRM表示</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2019/02/28/VRMViewer1" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2019/02/28/VRMViewer1" />
     <updated>2019-02-27T15:00:00.000Z</updated>
     <summary>ロボスタの勉強会に出席してみて、VRM(というかUniVRM)は気軽だな、と再認識したので試してみた</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2018/03/19/WakeOnLan</id>
     <title>Wake On Lan</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2018/03/19/WakeOnLan" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2018/03/19/WakeOnLan" />
     <updated>2018-03-18T15:00:00.000Z</updated>
     <summary>PC を定期的に起動・終了したく、試しました</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2017/10/08/diskchecker</id>
     <title>Disk Checker</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2017/10/08/diskchecker" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2017/10/08/diskchecker" />
     <updated>2017-10-08T13:57:26.000Z</updated>
     <summary>SDカードのフィルと検査</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2017/05/16/RayProfiler</id>
     <title>RayProfiler</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2017/05/16/RayProfiler" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2017/05/16/RayProfiler" />
     <updated>2017-05-15T23:14:33.000Z</updated>
     <summary>簡単なデバッグ用スクリーンインジケータを作りました</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2017/05/06/QnapFfmpeg</id>
     <title>QNAP NAS DLNA / ffmpeg 変換</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2017/05/06/QnapFfmpeg" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2017/05/06/QnapFfmpeg" />
     <updated>2017-05-05T15:58:16.000Z</updated>
     <summary>QNAP / DLNA が最近動いていないのでメンテをしました</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2017/03/19/AssetBundleCompress4</id>
     <title>AssetBundle の圧縮(4) 圧縮下段</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2017/03/19/AssetBundleCompress4" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2017/03/19/AssetBundleCompress4" />
     <updated>2017-03-19T06:06:14.000Z</updated>
     <summary>実験結果</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2017/03/19/AssetBundleCompress3</id>
     <title>AssetBundle の圧縮(3) 圧縮上段</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2017/03/19/AssetBundleCompress3" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2017/03/19/AssetBundleCompress3" />
     <updated>2017-03-19T05:44:18.000Z</updated>
     <summary>圧縮の実装と結果</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2017/03/17/AssetBundleCompress2</id>
     <title>AssetBundle の圧縮(2) 現状の計測</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2017/03/17/AssetBundleCompress2" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2017/03/17/AssetBundleCompress2" />
     <updated>2017-03-17T13:27:22.000Z</updated>
     <summary>通常のデータを実験データで計測</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2017/03/17/AssetBundleCompress1</id>
     <title>AssetBundle の圧縮(1) 目的と方針</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2017/03/17/AssetBundleCompress1" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2017/03/17/AssetBundleCompress1" />
     <updated>2017-03-17T13:04:43.000Z</updated>
     <summary>AssetBundleはLZMAやLZ4で圧縮されますが、扱うデータの特性がわかっている場合はより特殊化した圧縮が期待できるのではないかと考えました。</update>
   </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2017/03/11/InstallHexoAndThemes</id>
     <title>Hexoのインストール</title>
-    <link rel="alternate" type="text/html" href="https://bugfire.dev/#/blog/post/2017/03/11/InstallHexoAndThemes" />
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2017/03/11/InstallHexoAndThemes" />
     <updated>2017-03-11T04:00:00.000Z</updated>
     <summary>Github pages を使って Blog を作ってみた</update>
   </entry>
