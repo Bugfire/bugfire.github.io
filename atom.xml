@@ -2,9 +2,23 @@
 <feed xmlns='http://www.w3.org/2005/Atom' xml:lang='ja'>
   <id>tag:bugfire.dev/blog,2019:feed</id>
   <title>Bugfire.dev/blog</title>
-  <updated>2019-11-11T15:00:00.000Z</updated>
+  <updated>2019-12-20T15:00:00.000Z</updated>
   <link rel="alternate" type="text/html" href="https://bugfire.dev/blog" />
   <link rel="self" type="application/atom+xml" href="https://bugfire.dev/atom.xml" />
+  <entry>
+    <id>tag:bugfire.dev/blog,2019:entry://2019/12/21/GDM39</id>
+    <title>「GDM vol.39 エンジニア向け勉強会」の感想</title>
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2019/12/21/GDM39" />
+    <updated>2019-12-20T15:00:00.000Z</updated>
+    <summary>「GDM vol.39 エンジニア向け勉強会」の感想</update>
+  </entry>
+  <entry>
+    <id>tag:bugfire.dev/blog,2019:entry://2019/12/20/AdventCalendar2019</id>
+    <title>Advent Calender を書いた経緯等の裏話</title>
+    <link rel="alternate" type="text/html" href="https://bugfire.dev/2019/12/20/AdventCalendar2019" />
+    <updated>2019-12-19T15:00:00.000Z</updated>
+    <summary>Advent Calender を書いた経緯等の裏話</update>
+  </entry>
   <entry>
     <id>tag:bugfire.dev/blog,2019:entry://2019/11/12/SpaOnGithubPages</id>
     <title>Github Pages + SPA で Google Index をめぐる戦い</title>
