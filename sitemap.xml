@@ -94,6 +94,9 @@
     <loc>https://bugfire.dev/blog/p4</loc>
   </url>
   <url>
+    <loc>https://bugfire.dev/blog/tags/Diary</loc>
+  </url>
+  <url>
     <loc>https://bugfire.dev/blog/tags/Docker</loc>
   </url>
   <url>
@@ -107,6 +110,9 @@
   </url>
   <url>
     <loc>https://bugfire.dev/blog/tags/React</loc>
+  </url>
+  <url>
+    <loc>https://bugfire.dev/blog/tags/Study</loc>
   </url>
   <url>
     <loc>https://bugfire.dev/blog/tags/TypeScript</loc>
