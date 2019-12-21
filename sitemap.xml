@@ -49,6 +49,12 @@
     <loc>https://bugfire.dev/2019/11/12/SpaOnGithubPages</loc>
   </url>
   <url>
+    <loc>https://bugfire.dev/2019/12/20/AdventCalendar2019</loc>
+  </url>
+  <url>
+    <loc>https://bugfire.dev/2019/12/21/GDM39</loc>
+  </url>
+  <url>
     <loc>https://bugfire.dev/archives/2017/03</loc>
   </url>
   <url>
@@ -73,6 +79,9 @@
     <loc>https://bugfire.dev/archives/2019/11</loc>
   </url>
   <url>
+    <loc>https://bugfire.dev/archives/2019/12</loc>
+  </url>
+  <url>
     <loc>https://bugfire.dev/blog</loc>
   </url>
   <url>
@@ -80,6 +89,9 @@
   </url>
   <url>
     <loc>https://bugfire.dev/blog/p3</loc>
+  </url>
+  <url>
+    <loc>https://bugfire.dev/blog/p4</loc>
   </url>
   <url>
     <loc>https://bugfire.dev/blog/tags/Docker</loc>
