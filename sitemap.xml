@@ -58,6 +58,9 @@
     <loc>https://bugfire.dev/2019/12/28/10gbe</loc>
   </url>
   <url>
+    <loc>https://bugfire.dev/2020/02/11/ReverseProxyHttps</loc>
+  </url>
+  <url>
     <loc>https://bugfire.dev/archives/2017/03</loc>
   </url>
   <url>
@@ -83,6 +86,9 @@
   </url>
   <url>
     <loc>https://bugfire.dev/archives/2019/12</loc>
+  </url>
+  <url>
+    <loc>https://bugfire.dev/archives/2020/02</loc>
   </url>
   <url>
     <loc>https://bugfire.dev/blog</loc>
@@ -131,6 +137,9 @@
   </url>
   <url>
     <loc>https://bugfire.dev/blog/tags/Web</loc>
+  </url>
+  <url>
+    <loc>https://bugfire.dev/blog/tags/WebRtc</loc>
   </url>
   <url>
     <loc>https://bugfire.dev/privacypolicy</loc>
