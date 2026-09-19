@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="alternate" type="application/atom+xml" title="Bugfire.dev Blog" href="/atom.xml" />
+    <link href="../../../_app/immutable/entry/start.BP1O3_KH.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CHoMWuqt.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/fn_WEBny.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.TSCTuPMF.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/0.CP3BdqW1.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/3.CM3rSiJU.js" rel="modulepreload">
+		<!--1pgso1u--><meta name="description" content="Frigate NVR"/><link rel="canonical" href="https://bugfire.dev/2026/09/19/Frigate"/><!----><title>Frigate NVR · Bugfire.dev</title>
+		<link href="../../../_app/immutable/assets/0.2XMBmDXC.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><a class="skip" href="#main">本文へ</a> <header id="top"><nav aria-label="Main"><a class="brand" href="/">Bugfire.dev</a><a href="/blog">Blog</a><a href="/resume">Resume</a></nav></header> <main id="main"><!--[--><!--[-1--><!--]--> <details class="filters"><summary>タグ・月別アーカイブ</summary> <nav class="chips" aria-label="タグ"><!--[--><a href="/blog/tags/Diary">Diary (3)</a><a href="/blog/tags/Docker">Docker (4)</a><a href="/blog/tags/Frigate">Frigate (1)</a><a href="/blog/tags/Hexo">Hexo (1)</a><a href="/blog/tags/Node.js">Node.js (2)</a><a href="/blog/tags/Proxmox">Proxmox (3)</a><a href="/blog/tags/QNAP">QNAP (6)</a><a href="/blog/tags/React">React (1)</a><a href="/blog/tags/Study">Study (1)</a><a href="/blog/tags/TypeScript">TypeScript (1)</a><a href="/blog/tags/Unity">Unity (6)</a><a href="/blog/tags/VRM">VRM (1)</a><a href="/blog/tags/Web">Web (4)</a><a href="/blog/tags/WebRtc">WebRtc (1)</a><!--]--></nav> <nav class="chips" aria-label="月別"><!--[--><a href="/archives/2026/09">2026/09 (3)</a><a href="/archives/2020/02">2020/02 (1)</a><a href="/archives/2019/12">2019/12 (3)</a><a href="/archives/2019/11">2019/11 (1)</a><a href="/archives/2019/10">2019/10 (1)</a><a href="/archives/2019/09">2019/09 (3)</a><a href="/archives/2019/02">2019/02 (1)</a><a href="/archives/2018/03">2018/03 (1)</a><a href="/archives/2017/10">2017/10 (1)</a><a href="/archives/2017/05">2017/05 (2)</a><a href="/archives/2017/03">2017/03 (5)</a><!--]--></nav></details> <nav class="paging" aria-label="ページ送り"><!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><a href="/2026/09/19/ProxmoxAmdCpu">古い記事 →</a><!--]--></nav><!----> <!--[--><article><!--[0--><h1>Frigate NVR</h1><!--]--> <time datetime="2026-09-18T17:00:00.000Z">2026-09-19</time> <div class="chips"><!--[--><a href="/blog/tags/Proxmox">Proxmox</a><a href="/blog/tags/Frigate">Frigate</a><!--]--></div> <div class="prose"><!----><p>Proxmox で QNAP の NVR の代わりとして導入しました</p>
+<h2>良い点</h2>
+<ul>
+<li>rtsp proxy が含まれている (go2rtc)<ul>
+<li>別に導入すれば良い話だが知らなかったので助かった</li>
+<li>動画のストリームを一つしか出力できないカメラで特に助かった</li>
+</ul>
+</li>
+<li>UI が軽い<ul>
+<li>PCのパワーがダンチなのでそれはそう</li>
+</ul>
+</li>
+<li>object detection により録画イベントが厳選された<ul>
+<li>ノイズが大幅に減った</li>
+</ul>
+</li>
+</ul>
+<h2>困った点</h2>
+<h3>外部トリガーの機能不足 (1)</h3>
+<p>QNAP ではカメラ側の探知で ftp でアクセスを行い、それをトリガーとして遡って録画できたが、難しい</p>
+<p>既存の仕組みの組み合わせで言えば、30秒バッファリングして rtsp ストリームを送り、イベントはリアルタイムにすれば遡って録画はできるが・・・、ダッシュボードなど色々面倒になる</p>
+<p>演算コストは必要になるが、高性能な object detection をそのまま使うこととした</p>
+<h3>外部トリガーの機能不足 (2)</h3>
+<p>QNAP では特定カメラのモーション探知をソースとして、複数チャネルを録画できたが、これも難しそうだった</p>
+<p>色々試したのだが、例えば探知用の仮想ストリームを作ってそれから探知させたりしていたが、ダッシュボードではタイミングにより探知用の軽量ストリームを使用していて破綻した</p>
+<p>結果的に、定期的に object detection の対象となったタイムスパンの motion detection フラグを立てるスクリプトを実行し、保持期間を強制的に伸ばした</p>
+<h3>消費電力の上昇</h3>
+<p>motion 探知用に複数チャネルを CPU でデコードし、CPU で object detection を回しているため、それなりに負荷がかかる (9700X で 5%〜10%)</p>
+<p>Intel の CPU であれば iGPU を利用して効率化が図れるらしいが、AMD ではあまり実績がないようで、試していない</p>
+<p>object detection に関しては外部 TPU (Coral, Hailo8) を使えばかなり良くなるような記事を多くみたが、どちらも、かなり過去のプロダクトで、購入するのがもったいなく…<br>NVidia GPU は消費電力がおそらくすごいので試してすらいない</p>
+<h3>奇妙なカメラの存在</h3>
+<p>ストリームを一つしか受け付けなく二つ目で 503 を返したり、複数の解像度のエンドポイントがありつつも、最後のエンドポイントの解像度でしか送れない（最後に接続したエンドポイントの解像度に変更される）、など</p>
+<p>これは Frigate の制限だと思うが、record 用の rtsp と detect 用の rtsp を準備して、detect 用は常時デコードすることが前提となっており、detect に使わないカメラでも常時デコード用のストリームを一つ用意する必要がある（record 用と同じでも良いが解像度が高い分コストがかかる）</p>
+<p>detect 用に ffmpeg でIフレーム以外捨てたり、解像度を落としたものを record とは別に rtsp で再配信するようにした</p>
+<h2>総合的に</h2>
+<p>良かった（こなみ<br>なんだかんだで計測しながら色々試せたのが楽しかった。</p>
+<p>なんだかんだ言って Coral TPU 試したいので、どこかで買うかも</p>
+<!----></div></article><!--]--> <nav class="paging" aria-label="ページ送り"><!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><a href="/2026/09/19/ProxmoxAmdCpu">古い記事 →</a><!--]--></nav><!----> <!--[0--><!----><div></div><!----><!--]--><!--]--><!----></main> <footer><a href="/privacypolicy">Privacy Policy</a><a href="/atom.xml">Atom</a><a href="#top">↑ Top</a></footer><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1iukske = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.BP1O3_KH.js"),
+						import("../../../_app/immutable/entry/app.TSCTuPMF.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data: [null,{type:"data",data:{title:"Frigate NVR",posts:[{title:"Frigate NVR",date:"2026-09-18T17:00:00.000Z",day:"2026-09-19",tags:["Proxmox","Frigate"],summary:"Frigate NVR",symbol:"2026/09/19/Frigate",html:"\u003Cp>Proxmox で QNAP の NVR の代わりとして導入しました\u003C/p>\n\u003Ch2>良い点\u003C/h2>\n\u003Cul>\n\u003Cli>rtsp proxy が含まれている (go2rtc)\u003Cul>\n\u003Cli>別に導入すれば良い話だが知らなかったので助かった\u003C/li>\n\u003Cli>動画のストリームを一つしか出力できないカメラで特に助かった\u003C/li>\n\u003C/ul>\n\u003C/li>\n\u003Cli>UI が軽い\u003Cul>\n\u003Cli>PCのパワーがダンチなのでそれはそう\u003C/li>\n\u003C/ul>\n\u003C/li>\n\u003Cli>object detection により録画イベントが厳選された\u003Cul>\n\u003Cli>ノイズが大幅に減った\u003C/li>\n\u003C/ul>\n\u003C/li>\n\u003C/ul>\n\u003Ch2>困った点\u003C/h2>\n\u003Ch3>外部トリガーの機能不足 (1)\u003C/h3>\n\u003Cp>QNAP ではカメラ側の探知で ftp でアクセスを行い、それをトリガーとして遡って録画できたが、難しい\u003C/p>\n\u003Cp>既存の仕組みの組み合わせで言えば、30秒バッファリングして rtsp ストリームを送り、イベントはリアルタイムにすれば遡って録画はできるが・・・、ダッシュボードなど色々面倒になる\u003C/p>\n\u003Cp>演算コストは必要になるが、高性能な object detection をそのまま使うこととした\u003C/p>\n\u003Ch3>外部トリガーの機能不足 (2)\u003C/h3>\n\u003Cp>QNAP では特定カメラのモーション探知をソースとして、複数チャネルを録画できたが、これも難しそうだった\u003C/p>\n\u003Cp>色々試したのだが、例えば探知用の仮想ストリームを作ってそれから探知させたりしていたが、ダッシュボードではタイミングにより探知用の軽量ストリームを使用していて破綻した\u003C/p>\n\u003Cp>結果的に、定期的に object detection の対象となったタイムスパンの motion detection フラグを立てるスクリプトを実行し、保持期間を強制的に伸ばした\u003C/p>\n\u003Ch3>消費電力の上昇\u003C/h3>\n\u003Cp>motion 探知用に複数チャネルを CPU でデコードし、CPU で object detection を回しているため、それなりに負荷がかかる (9700X で 5%〜10%)\u003C/p>\n\u003Cp>Intel の CPU であれば iGPU を利用して効率化が図れるらしいが、AMD ではあまり実績がないようで、試していない\u003C/p>\n\u003Cp>object detection に関しては外部 TPU (Coral, Hailo8) を使えばかなり良くなるような記事を多くみたが、どちらも、かなり過去のプロダクトで、購入するのがもったいなく…\u003Cbr>NVidia GPU は消費電力がおそらくすごいので試してすらいない\u003C/p>\n\u003Ch3>奇妙なカメラの存在\u003C/h3>\n\u003Cp>ストリームを一つしか受け付けなく二つ目で 503 を返したり、複数の解像度のエンドポイントがありつつも、最後のエンドポイントの解像度でしか送れない（最後に接続したエンドポイントの解像度に変更される）、など\u003C/p>\n\u003Cp>これは Frigate の制限だと思うが、record 用の rtsp と detect 用の rtsp を準備して、detect 用は常時デコードすることが前提となっており、detect に使わないカメラでも常時デコード用のストリームを一つ用意する必要がある（record 用と同じでも良いが解像度が高い分コストがかかる）\u003C/p>\n\u003Cp>detect 用に ffmpeg でIフレーム以外捨てたり、解像度を落としたものを record とは別に rtsp で再配信するようにした\u003C/p>\n\u003Ch2>総合的に\u003C/h2>\n\u003Cp>良かった（こなみ\u003Cbr>なんだかんだで計測しながら色々試せたのが楽しかった。\u003C/p>\n\u003Cp>なんだかんだ言って Coral TPU 試したいので、どこかで買うかも\u003C/p>\n"}],single:true,page:1,total:1,previous:"",next:"2026/09/19/ProxmoxAmdCpu",path:"2026/09/19/Frigate",tags:[{label:"Diary",count:3,path:"blog/tags/Diary"},{label:"Docker",count:4,path:"blog/tags/Docker"},{label:"Frigate",count:1,path:"blog/tags/Frigate"},{label:"Hexo",count:1,path:"blog/tags/Hexo"},{label:"Node.js",count:2,path:"blog/tags/Node.js"},{label:"Proxmox",count:3,path:"blog/tags/Proxmox"},{label:"QNAP",count:6,path:"blog/tags/QNAP"},{label:"React",count:1,path:"blog/tags/React"},{label:"Study",count:1,path:"blog/tags/Study"},{label:"TypeScript",count:1,path:"blog/tags/TypeScript"},{label:"Unity",count:6,path:"blog/tags/Unity"},{label:"VRM",count:1,path:"blog/tags/VRM"},{label:"Web",count:4,path:"blog/tags/Web"},{label:"WebRtc",count:1,path:"blog/tags/WebRtc"}],months:[{label:"2026/09",count:3,path:"archives/2026/09"},{label:"2020/02",count:1,path:"archives/2020/02"},{label:"2019/12",count:3,path:"archives/2019/12"},{label:"2019/11",count:1,path:"archives/2019/11"},{label:"2019/10",count:1,path:"archives/2019/10"},{label:"2019/09",count:3,path:"archives/2019/09"},{label:"2019/02",count:1,path:"archives/2019/02"},{label:"2018/03",count:1,path:"archives/2018/03"},{label:"2017/10",count:1,path:"archives/2017/10"},{label:"2017/05",count:2,path:"archives/2017/05"},{label:"2017/03",count:5,path:"archives/2017/03"}]},uses:{params:["path"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
