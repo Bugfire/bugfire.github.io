@@ -1,0 +1,3 @@
+import{A as e,E as t,_ as n,c as r,y as i}from"../chunks/fn_WEBny.js";import"../chunks/xihTtKlq.js";import"../chunks/D_vj7g66.js";var a=i(`<link rel="canonical" href="https://bugfire.dev/privacypolicy"/>`),o=i(`<section class="prose"><h1>Privacy Policy</h1> <h2>アクセス解析</h2> <p>本サイトでは現在 Google Analytics を使用していません。</p> <h2>コメント</h2> <p>記事のコメント欄には GitHub Issues を利用する Utterances を使用しています。記事を開くと
+    Utterances
+    のスクリプトが読み込まれ、コメント欄の表示・利用に伴い外部サービスとの通信が発生します。</p> <p><a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement">GitHub のプライバシーステートメント</a></p></section>`);function s(i){var s=o();r(`jfqulh`,r=>{var i=a();t(()=>{e.title=`Privacy Policy · Bugfire.dev`}),n(r,i)}),n(i,s)}export{s as component};

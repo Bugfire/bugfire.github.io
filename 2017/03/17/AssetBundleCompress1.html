@@ -1,1 +1,73 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"/><link rel="shortcut icon" href="/favicon.ico"/><link rel="stylesheet" href="/highlight.css"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Bugfire.dev application"/><link rel="alternate" type="application/atom+xml" title="bugfire.dev/blog" href="/atom.xml"/><link rel="apple-touch-icon" href="res/logo192.png"/><link rel="manifest" href="/manifest.json"/><script type="text/javascript">!function(){var n=window.location;n.search&&"/"===n.pathname&&n.search.split("&").forEach(function(n){var o=n.slice(1).split("=");if("from"===o[0]){var a=decodeURIComponent(o[1]);window.history.replaceState(null,null,a)}})}()</script><title></title><link href="/static/css/main.ab97ed7d.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(a){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],p=0,l=[];p<n.length;p++)t=n[p],Object.prototype.hasOwnProperty.call(i,t)&&i[t]&&l.push(i[t][0]),i[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(a[r]=o[r]);for(s&&s(e);l.length;)l.shift()();return c.push.apply(c,u||[]),f()}function f(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==i[u]&&(n=!1)}n&&(c.splice(r--,1),e=p(p.s=t[0]))}return e}var t={},i={1:0},c=[];function p(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return a[e].call(r.exports,r,r.exports,p),r.l=!0,r.exports}p.m=a,p.c=t,p.d=function(e,r,t){p.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},p.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},p.t=function(r,e){if(1&e&&(r=p(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(p.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)p.d(t,n,function(e){return r[e]}.bind(null,n));return t},p.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return p.d(r,"a",r),r},p.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},p.p="/";var r=this["webpackJsonpghp-app"]=this["webpackJsonpghp-app"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;f()}([])</script><script src="/static/js/2.160a7d82.chunk.js"></script><script src="/static/js/main.952c1573.chunk.js"></script></body></html>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="alternate" type="application/atom+xml" title="Bugfire.dev Blog" href="/atom.xml" />
+    <link href="../../../_app/immutable/entry/start.D5Wminb0.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/B7qy3Wrf.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/fn_WEBny.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.C3qqov5A.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/0.CP3BdqW1.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/3.CM3rSiJU.js" rel="modulepreload">
+		<!--1pgso1u--><meta name="description" content="AssetBundleはLZMAやLZ4で圧縮されますが、扱うデータの特性がわかっている場合はより特殊化した圧縮が期待できるのではないかと考えました。"/><link rel="canonical" href="https://bugfire.dev/2017/03/17/AssetBundleCompress1"/><!----><title>AssetBundle の圧縮(1) 目的と方針 · Bugfire.dev</title>
+		<link href="../../../_app/immutable/assets/0.2XMBmDXC.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><a class="skip" href="#main">本文へ</a> <header id="top"><nav aria-label="Main"><a class="brand" href="/">Bugfire.dev</a><a href="/blog">Blog</a><a href="/resume">Resume</a></nav></header> <main id="main"><!--[--><!--[-1--><!--]--> <details class="filters"><summary>タグ・月別アーカイブ</summary> <nav class="chips" aria-label="タグ"><!--[--><a href="/blog/tags/Diary">Diary (2)</a><a href="/blog/tags/Docker">Docker (4)</a><a href="/blog/tags/Hexo">Hexo (1)</a><a href="/blog/tags/Node.js">Node.js (2)</a><a href="/blog/tags/QNAP">QNAP (5)</a><a href="/blog/tags/React">React (1)</a><a href="/blog/tags/Study">Study (1)</a><a href="/blog/tags/TypeScript">TypeScript (1)</a><a href="/blog/tags/Unity">Unity (6)</a><a href="/blog/tags/VRM">VRM (1)</a><a href="/blog/tags/Web">Web (4)</a><a href="/blog/tags/WebRtc">WebRtc (1)</a><!--]--></nav> <nav class="chips" aria-label="月別"><!--[--><a href="/archives/2020/02">2020/02 (1)</a><a href="/archives/2019/12">2019/12 (3)</a><a href="/archives/2019/11">2019/11 (1)</a><a href="/archives/2019/10">2019/10 (1)</a><a href="/archives/2019/09">2019/09 (3)</a><a href="/archives/2019/02">2019/02 (1)</a><a href="/archives/2018/03">2018/03 (1)</a><a href="/archives/2017/10">2017/10 (1)</a><a href="/archives/2017/05">2017/05 (2)</a><a href="/archives/2017/03">2017/03 (5)</a><!--]--></nav></details> <nav class="paging" aria-label="ページ送り"><!--[0--><a href="/2017/03/17/AssetBundleCompress2">← 新しい記事</a><!--]--> <!--[-1--><!--]--> <!--[0--><a href="/2017/03/11/InstallHexoAndThemes">古い記事 →</a><!--]--></nav><!----> <!--[--><article><!--[0--><h1>AssetBundle の圧縮(1) 目的と方針</h1><!--]--> <time datetime="2017-03-17T13:04:43.000Z">2017-03-17</time> <div class="chips"><!--[--><a href="/blog/tags/Unity">Unity</a><!--]--></div> <div class="prose"><!----><h1>目的</h1>
+<p>AssetBundleはLZMAやLZ4で圧縮されますが、扱うデータの特性がわかっている場合はより特殊化した<br>圧縮が期待できるのではないかと考えました。</p>
+<p>例えば目パチのようなアニメーションの画像データでは以下のようなアプローチがあります。</p>
+<ul>
+<li>目だけを上書きする透過画像を生成して上に乗せる。<br>透過面積が多い画像であれば標準のSpritePackerや <a href="https://www.codeandweb.com/texturepacker">TexturePacker</a> で効率的なAtlas化が可能です。</li>
+<li>差分画像を生成する。例えば <a href="http://madnesslabo.net/utage/">宴</a> のダイシング機能。</li>
+</ul>
+<p>しかし、今回は制約があり上の手法は使いません。</p>
+<h1>前提</h1>
+<p>制約は以下の通りです。</p>
+<ul>
+<li>使う側で特別なコードは一切書きたくない。</li>
+<li>TextureでありSpriteではない。</li>
+<li>機種依存圧縮(PVRTC, ETC)を使いたい。</li>
+<li>透過なしで1パスで描画を行いたい。</li>
+</ul>
+<p>PVRTC, ETC のバイト列を生成し、Unity の Texture としてロードができればよいのですが、<br>ちょっとわからなかったので別の方法を試します。(*1)</p>
+<h1>手法</h1>
+<p>AssetBundle をただ圧縮し、インストール時に展開するというアプローチを試してみます。</p>
+<p>テクスチャ圧縮はGPUの機能的制約から固定長で同じサイズのテクスチャであれば、同じ座標のデータは<br>同じブロックに存在します。したがって、局所性が高く、同一のピクセル構成部分であれば、同一のバイナリ構成になる可能性が高いと予想されます。<br>(PVRTC は近辺のブロックも参照を行うので、影響範囲は少し大きめになりますが、距離に応じて影響は低くなります)</p>
+<p>(*1) のPVRTCからテクスチャ生成ができれば、AssetBundle 内で圧縮するアプローチを取ることができるのですが、Nativeでテクスチャを生成する以外の方法があれば、誰か教えてください...。</p>
+<h1>問題点</h1>
+<ul>
+<li>圧縮前はロスレス画像でなければならない。<br>見た目が同じでもLossyな圧縮を行なった結果、微妙に画像データが異なると困ります。</li>
+<li>ストレージでの消費容量は無圧縮なので比較的大きい。</li>
+<li>複数のバリエーションをロードするとGPU側のメモリ消費は多い。</li>
+<li>暗号化を行えない。暗号化を先に行うと圧縮が難しい。<br>圧縮してから暗号化だと、ストレージでは圧縮を展開したデータになるため暗号化がかかっていない状態になります。</li>
+</ul>
+<p><a href="/2017/03/17/AssetBundleCompress2">(2)</a>へ続く。</p>
+<!----></div></article><!--]--> <nav class="paging" aria-label="ページ送り"><!--[0--><a href="/2017/03/17/AssetBundleCompress2">← 新しい記事</a><!--]--> <!--[-1--><!--]--> <!--[0--><a href="/2017/03/11/InstallHexoAndThemes">古い記事 →</a><!--]--></nav><!----> <!--[0--><!----><div></div><!----><!--]--><!--]--><!----></main> <footer><a href="/privacypolicy">Privacy Policy</a><a href="/atom.xml">Atom</a><a href="#top">↑ Top</a></footer><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_iza0hd = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.D5Wminb0.js"),
+						import("../../../_app/immutable/entry/app.C3qqov5A.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data: [null,{type:"data",data:{title:"AssetBundle の圧縮(1) 目的と方針",posts:[{title:"AssetBundle の圧縮(1) 目的と方針",date:"2017-03-17T13:04:43.000Z",day:"2017-03-17",tags:["Unity"],summary:"AssetBundleはLZMAやLZ4で圧縮されますが、扱うデータの特性がわかっている場合はより特殊化した圧縮が期待できるのではないかと考えました。",symbol:"2017/03/17/AssetBundleCompress1",html:"\u003Ch1>目的\u003C/h1>\n\u003Cp>AssetBundleはLZMAやLZ4で圧縮されますが、扱うデータの特性がわかっている場合はより特殊化した\u003Cbr>圧縮が期待できるのではないかと考えました。\u003C/p>\n\u003Cp>例えば目パチのようなアニメーションの画像データでは以下のようなアプローチがあります。\u003C/p>\n\u003Cul>\n\u003Cli>目だけを上書きする透過画像を生成して上に乗せる。\u003Cbr>透過面積が多い画像であれば標準のSpritePackerや \u003Ca href=\"https://www.codeandweb.com/texturepacker\">TexturePacker\u003C/a> で効率的なAtlas化が可能です。\u003C/li>\n\u003Cli>差分画像を生成する。例えば \u003Ca href=\"http://madnesslabo.net/utage/\">宴\u003C/a> のダイシング機能。\u003C/li>\n\u003C/ul>\n\u003Cp>しかし、今回は制約があり上の手法は使いません。\u003C/p>\n\u003Ch1>前提\u003C/h1>\n\u003Cp>制約は以下の通りです。\u003C/p>\n\u003Cul>\n\u003Cli>使う側で特別なコードは一切書きたくない。\u003C/li>\n\u003Cli>TextureでありSpriteではない。\u003C/li>\n\u003Cli>機種依存圧縮(PVRTC, ETC)を使いたい。\u003C/li>\n\u003Cli>透過なしで1パスで描画を行いたい。\u003C/li>\n\u003C/ul>\n\u003Cp>PVRTC, ETC のバイト列を生成し、Unity の Texture としてロードができればよいのですが、\u003Cbr>ちょっとわからなかったので別の方法を試します。(*1)\u003C/p>\n\u003Ch1>手法\u003C/h1>\n\u003Cp>AssetBundle をただ圧縮し、インストール時に展開するというアプローチを試してみます。\u003C/p>\n\u003Cp>テクスチャ圧縮はGPUの機能的制約から固定長で同じサイズのテクスチャであれば、同じ座標のデータは\u003Cbr>同じブロックに存在します。したがって、局所性が高く、同一のピクセル構成部分であれば、同一のバイナリ構成になる可能性が高いと予想されます。\u003Cbr>(PVRTC は近辺のブロックも参照を行うので、影響範囲は少し大きめになりますが、距離に応じて影響は低くなります)\u003C/p>\n\u003Cp>(*1) のPVRTCからテクスチャ生成ができれば、AssetBundle 内で圧縮するアプローチを取ることができるのですが、Nativeでテクスチャを生成する以外の方法があれば、誰か教えてください...。\u003C/p>\n\u003Ch1>問題点\u003C/h1>\n\u003Cul>\n\u003Cli>圧縮前はロスレス画像でなければならない。\u003Cbr>見た目が同じでもLossyな圧縮を行なった結果、微妙に画像データが異なると困ります。\u003C/li>\n\u003Cli>ストレージでの消費容量は無圧縮なので比較的大きい。\u003C/li>\n\u003Cli>複数のバリエーションをロードするとGPU側のメモリ消費は多い。\u003C/li>\n\u003Cli>暗号化を行えない。暗号化を先に行うと圧縮が難しい。\u003Cbr>圧縮してから暗号化だと、ストレージでは圧縮を展開したデータになるため暗号化がかかっていない状態になります。\u003C/li>\n\u003C/ul>\n\u003Cp>\u003Ca href=\"/2017/03/17/AssetBundleCompress2\">(2)\u003C/a>へ続く。\u003C/p>\n"}],single:true,page:1,total:1,previous:"2017/03/17/AssetBundleCompress2",next:"2017/03/11/InstallHexoAndThemes",path:"2017/03/17/AssetBundleCompress1",tags:[{label:"Diary",count:2,path:"blog/tags/Diary"},{label:"Docker",count:4,path:"blog/tags/Docker"},{label:"Hexo",count:1,path:"blog/tags/Hexo"},{label:"Node.js",count:2,path:"blog/tags/Node.js"},{label:"QNAP",count:5,path:"blog/tags/QNAP"},{label:"React",count:1,path:"blog/tags/React"},{label:"Study",count:1,path:"blog/tags/Study"},{label:"TypeScript",count:1,path:"blog/tags/TypeScript"},{label:"Unity",count:6,path:"blog/tags/Unity"},{label:"VRM",count:1,path:"blog/tags/VRM"},{label:"Web",count:4,path:"blog/tags/Web"},{label:"WebRtc",count:1,path:"blog/tags/WebRtc"}],months:[{label:"2020/02",count:1,path:"archives/2020/02"},{label:"2019/12",count:3,path:"archives/2019/12"},{label:"2019/11",count:1,path:"archives/2019/11"},{label:"2019/10",count:1,path:"archives/2019/10"},{label:"2019/09",count:3,path:"archives/2019/09"},{label:"2019/02",count:1,path:"archives/2019/02"},{label:"2018/03",count:1,path:"archives/2018/03"},{label:"2017/10",count:1,path:"archives/2017/10"},{label:"2017/05",count:2,path:"archives/2017/05"},{label:"2017/03",count:5,path:"archives/2017/03"}]},uses:{params:["path"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
