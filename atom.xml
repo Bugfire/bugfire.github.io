@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
-<id>tag:bugfire.dev/blog,2019:feed</id><title>Bugfire.dev/blog</title><updated>2020-02-10T15:00:00.000Z</updated>
+<id>tag:bugfire.dev/blog,2019:feed</id><title>Bugfire.dev/blog</title><updated>2026-09-18T15:00:00.000Z</updated>
 <author><name>Bugfire</name></author><link href="https://bugfire.dev/blog"/><link rel="self" href="https://bugfire.dev/atom.xml"/>
+<entry><id>tag:bugfire.dev/blog,2019:entry://2026/09/19/2026-09-19</id><title>QNAP から Proxmox などに切り替えた日記</title><link href="https://bugfire.dev/2026/09/19/2026-09-19"/><updated>2026-09-18T15:00:00.000Z</updated><summary>QNAP から Proxmox などに切り替えた日記</summary></entry>
 <entry><id>tag:bugfire.dev/blog,2019:entry://2020/02/11/ReverseProxyHttps</id><title>Let&apos;s encrypt + nginx で momo 環境を https 化した話</title><link href="https://bugfire.dev/2020/02/11/ReverseProxyHttps"/><updated>2020-02-10T15:00:00.000Z</updated><summary>Let&apos;s encrypt + nginx で momo 環境を https 化した話</summary></entry>
 <entry><id>tag:bugfire.dev/blog,2019:entry://2019/12/28/10gbe</id><title>PC周りを10gbe化した</title><link href="https://bugfire.dev/2019/12/28/10gbe"/><updated>2019-12-27T15:00:00.000Z</updated><summary>PC周りを10gbe化した</summary></entry>
 <entry><id>tag:bugfire.dev/blog,2019:entry://2019/12/21/GDM39</id><title>「GDM vol.39 エンジニア向け勉強会」の感想</title><link href="https://bugfire.dev/2019/12/21/GDM39"/><updated>2019-12-20T15:00:00.000Z</updated><summary>「GDM vol.39 エンジニア向け勉強会」の感想</summary></entry>

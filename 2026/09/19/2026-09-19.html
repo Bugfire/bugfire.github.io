@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="alternate" type="application/atom+xml" title="Bugfire.dev Blog" href="/atom.xml" />
+    <link href="../../../_app/immutable/entry/start.Dj3HySx7.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DtgLymIO.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/fn_WEBny.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.BUKfcqYV.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/0.CP3BdqW1.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/3.CM3rSiJU.js" rel="modulepreload">
+		<!--1pgso1u--><meta name="description" content="QNAP から Proxmox などに切り替えた日記"/><link rel="canonical" href="https://bugfire.dev/2026/09/19/2026-09-19"/><!----><title>QNAP から Proxmox などに切り替えた日記 · Bugfire.dev</title>
+		<link href="../../../_app/immutable/assets/0.2XMBmDXC.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><a class="skip" href="#main">本文へ</a> <header id="top"><nav aria-label="Main"><a class="brand" href="/">Bugfire.dev</a><a href="/blog">Blog</a><a href="/resume">Resume</a></nav></header> <main id="main"><!--[--><!--[-1--><!--]--> <details class="filters"><summary>タグ・月別アーカイブ</summary> <nav class="chips" aria-label="タグ"><!--[--><a href="/blog/tags/Diary">Diary (3)</a><a href="/blog/tags/Docker">Docker (4)</a><a href="/blog/tags/Hexo">Hexo (1)</a><a href="/blog/tags/Node.js">Node.js (2)</a><a href="/blog/tags/Proxmox">Proxmox (1)</a><a href="/blog/tags/QNAP">QNAP (6)</a><a href="/blog/tags/React">React (1)</a><a href="/blog/tags/Study">Study (1)</a><a href="/blog/tags/TypeScript">TypeScript (1)</a><a href="/blog/tags/Unity">Unity (6)</a><a href="/blog/tags/VRM">VRM (1)</a><a href="/blog/tags/Web">Web (4)</a><a href="/blog/tags/WebRtc">WebRtc (1)</a><!--]--></nav> <nav class="chips" aria-label="月別"><!--[--><a href="/archives/2026/09">2026/09 (1)</a><a href="/archives/2020/02">2020/02 (1)</a><a href="/archives/2019/12">2019/12 (3)</a><a href="/archives/2019/11">2019/11 (1)</a><a href="/archives/2019/10">2019/10 (1)</a><a href="/archives/2019/09">2019/09 (3)</a><a href="/archives/2019/02">2019/02 (1)</a><a href="/archives/2018/03">2018/03 (1)</a><a href="/archives/2017/10">2017/10 (1)</a><a href="/archives/2017/05">2017/05 (2)</a><a href="/archives/2017/03">2017/03 (5)</a><!--]--></nav></details> <nav class="paging" aria-label="ページ送り"><!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><a href="/2020/02/11/ReverseProxyHttps">古い記事 →</a><!--]--></nav><!----> <!--[--><article><!--[0--><h1>QNAP から Proxmox などに切り替えた日記</h1><!--]--> <time datetime="2026-09-18T15:00:00.000Z">2026-09-19</time> <div class="chips"><!--[--><a href="/blog/tags/QNAP">QNAP</a><a href="/blog/tags/Proxmox">Proxmox</a><a href="/blog/tags/Diary">Diary</a><!--]--></div> <div class="prose"><!----><p>ほう、6年放置ですか・・・<br>資料的価値はあまりないと思うので、これは日記とします</p>
+<p>しかし、この6年でAI周りの環境めちゃんこ変わりましたね、長くなりそうなのでそこは書きませんが</p>
+<h3>2025-05 序章</h3>
+<p>家の中のネットワークを光にしたかった (SFP+)<br>Mikrotik が安くて評判が良さそうだったので、Getic から通販で色々買う<br>予定されていた入院直前だったと思う</p>
+<h3>2025-05 DeskMeet X600 の CPU ピンを折る</h3>
+<p>当時メインの Windows として小型PC (DynaDesk DT100) を使っており、古くなってきたのでリプレイスで PCIe の入る小型 PC をどうしようか悩んだ末に Asrock DeskMeet X600 が良さそうという結論に  </p>
+<p>それで買ったのですが、組み立て中に CPU を落として、いきなりのCPUピン折れ<br>かなり泣きたかったのですが、ありがたいことに無償保証サービス中で交換することになりました  </p>
+<p>交換は Taiwan へ送付して修理するっぽくかなり時間がかかるので、待ちきれなくて新しい X600 をもう一台購入。戻ってきたら2台に増えます。わぁい  </p>
+<h3>2025-05 Proxmox を試し始めた</h3>
+<p>その前は VMware ESXi とか試していたかな  </p>
+<p>新しい X600 の準備ができてメイン PC を移行していたのですが、余った DynaDesk に Proxmox を入れたら、なんか楽しいなって</p>
+<p>X600 もいい感じだったので、修理から戻ってきたら2台になるし Proxmox Cluster できるんじゃないって</p>
+<p>妻の PC が古くなってきたのもあり、楽天 Rebates で Levono の PC を2台買ってそれぞれ新しいメイン PC にした。よし3台余ったぞ（？？</p>
+<h3>2025-07 Ceph RBD 稼働する</h3>
+<p>修理の X600 が戻ってきたので、さっそく Proxmox をいれて Ceph を有効化</p>
+<p>これでもうシャットダウンすることはできなくなりました  </p>
+<p>というのは半分嘘で、一通りセットアップが完了したら満足して止めました。常時動かしておくワークロードないし</p>
+<h3>2026-01 GPU Server 追加する</h3>
+<p>RTX5080をゲーム用に使っており、それで簡単な拡散モデルは動作するし、MBP M2Max 64GB もあったので LLM のローカルの小さいのなら動くから満足していたのですが  </p>
+<p>RTX5060Ti 16GBが発売されて、これ複数枚刺したら楽しいんじゃ...？って3枚買ってみました</p>
+<p>3枚買うことにしたものの、ライザなどを使わずに3枚させそうな組み合わせを探すのに苦労をし、ProArt X870E-CREATOR WIFI に辿り着きました</p>
+<p>フルサイズPCIeが3つあり、間が2slot/1slotだったので、3slot + 2slot + 3slot なら刺さるじゃないと(※)  </p>
+<p>そして、一番下のスロットに 3slot を指すのでスロットの下に巨大なスペースが必要・・・と  </p>
+<p>うんうん、be quiet! Light Base 600 LX ならスペースに余裕があるね。なんかくっそデカイけど</p>
+<p>よくわからない情熱で無駄遣いしました。すみません。全部合わせても 5090 よりは安いけど  </p>
+<p>DynaDesk は他と比べて遅いし古いので ProxmoxBackupServer 用に回して、これを Proxmox のクラスタに混ぜることにしました</p>
+<p>※ 結局あとで中途半端なので3枚目は撤去しました</p>
+<h3>2026-02 OpenClaw 試す、常時稼働する</h3>
+<p>OpenClaw が流行って、試したくなり Proxmox を常時稼働して動かしていました  </p>
+<h3>2026-05 OpenClaw 死す、常時稼働やめる</h3>
+<p>なんかやらかした、とかではなく、恐ろしい電気代の前に停止しました。なんなら真夏で暑いし。せめて冬なら暖房と言い張れたんだけど  </p>
+<p>3台で 185W ほど消費していました</p>
+<h3>2025-09 常時稼働復帰する</h3>
+<p>QNAP も古くなってきたし、新機種もあまり変わり映えしない・もしくは目玉が飛び出るほど高額で、Proxmox でなんとかならんかなと思い始めて色々試していました</p>
+<p>そもそも今時みんなクラウドストレージに保存するので NAS の価値もニッチになり高くならざるを得ませんね、時代の流れや</p>
+<ul>
+<li>Samba -&gt; TrueNAS</li>
+<li>QVR Pro -&gt; Frigate</li>
+<li>UPS</li>
+</ul>
+<p>Samba は特にいうことはないのですが、TrueNAS で QNAP で行っていたような S3, GoogleDrive, OneDrive への定期バックアップができたのがよかったですね</p>
+<p>QNAP のときは Raid0 だったのですが、過剰な気がしたので別な node に2台 TrueNAS を立てて replica を作りました、メインは NMVe サブは SATA SSD  </p>
+<p>QVR Pro は Surveillance Station のころからお世話になっていて移行できる気もあまりなかったのですが、Claude Code 先生と色々試しているうちにいけそうだなとということで移動</p>
+<p>目標は QNAP の置き換えだったので、無事全機能を置き換えて、入れ替えることができました<br>消費電力的には常時 +100W くらいで痛いですが、これ以上は GPU Server を止めて intel 機にするくらいしかないかなと思っています</p>
+<!----></div></article><!--]--> <nav class="paging" aria-label="ページ送り"><!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><a href="/2020/02/11/ReverseProxyHttps">古い記事 →</a><!--]--></nav><!----> <!--[0--><!----><div></div><!----><!--]--><!--]--><!----></main> <footer><a href="/privacypolicy">Privacy Policy</a><a href="/atom.xml">Atom</a><a href="#top">↑ Top</a></footer><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_mesr6l = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.Dj3HySx7.js"),
+						import("../../../_app/immutable/entry/app.BUKfcqYV.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data: [null,{type:"data",data:{title:"QNAP から Proxmox などに切り替えた日記",posts:[{title:"QNAP から Proxmox などに切り替えた日記",date:"2026-09-18T15:00:00.000Z",day:"2026-09-19",tags:["QNAP","Proxmox","Diary"],summary:"QNAP から Proxmox などに切り替えた日記",symbol:"2026/09/19/2026-09-19",html:"\u003Cp>ほう、6年放置ですか・・・\u003Cbr>資料的価値はあまりないと思うので、これは日記とします\u003C/p>\n\u003Cp>しかし、この6年でAI周りの環境めちゃんこ変わりましたね、長くなりそうなのでそこは書きませんが\u003C/p>\n\u003Ch3>2025-05 序章\u003C/h3>\n\u003Cp>家の中のネットワークを光にしたかった (SFP+)\u003Cbr>Mikrotik が安くて評判が良さそうだったので、Getic から通販で色々買う\u003Cbr>予定されていた入院直前だったと思う\u003C/p>\n\u003Ch3>2025-05 DeskMeet X600 の CPU ピンを折る\u003C/h3>\n\u003Cp>当時メインの Windows として小型PC (DynaDesk DT100) を使っており、古くなってきたのでリプレイスで PCIe の入る小型 PC をどうしようか悩んだ末に Asrock DeskMeet X600 が良さそうという結論に  \u003C/p>\n\u003Cp>それで買ったのですが、組み立て中に CPU を落として、いきなりのCPUピン折れ\u003Cbr>かなり泣きたかったのですが、ありがたいことに無償保証サービス中で交換することになりました  \u003C/p>\n\u003Cp>交換は Taiwan へ送付して修理するっぽくかなり時間がかかるので、待ちきれなくて新しい X600 をもう一台購入。戻ってきたら2台に増えます。わぁい  \u003C/p>\n\u003Ch3>2025-05 Proxmox を試し始めた\u003C/h3>\n\u003Cp>その前は VMware ESXi とか試していたかな  \u003C/p>\n\u003Cp>新しい X600 の準備ができてメイン PC を移行していたのですが、余った DynaDesk に Proxmox を入れたら、なんか楽しいなって\u003C/p>\n\u003Cp>X600 もいい感じだったので、修理から戻ってきたら2台になるし Proxmox Cluster できるんじゃないって\u003C/p>\n\u003Cp>妻の PC が古くなってきたのもあり、楽天 Rebates で Levono の PC を2台買ってそれぞれ新しいメイン PC にした。よし3台余ったぞ（？？\u003C/p>\n\u003Ch3>2025-07 Ceph RBD 稼働する\u003C/h3>\n\u003Cp>修理の X600 が戻ってきたので、さっそく Proxmox をいれて Ceph を有効化\u003C/p>\n\u003Cp>これでもうシャットダウンすることはできなくなりました  \u003C/p>\n\u003Cp>というのは半分嘘で、一通りセットアップが完了したら満足して止めました。常時動かしておくワークロードないし\u003C/p>\n\u003Ch3>2026-01 GPU Server 追加する\u003C/h3>\n\u003Cp>RTX5080をゲーム用に使っており、それで簡単な拡散モデルは動作するし、MBP M2Max 64GB もあったので LLM のローカルの小さいのなら動くから満足していたのですが  \u003C/p>\n\u003Cp>RTX5060Ti 16GBが発売されて、これ複数枚刺したら楽しいんじゃ...？って3枚買ってみました\u003C/p>\n\u003Cp>3枚買うことにしたものの、ライザなどを使わずに3枚させそうな組み合わせを探すのに苦労をし、ProArt X870E-CREATOR WIFI に辿り着きました\u003C/p>\n\u003Cp>フルサイズPCIeが3つあり、間が2slot/1slotだったので、3slot + 2slot + 3slot なら刺さるじゃないと(※)  \u003C/p>\n\u003Cp>そして、一番下のスロットに 3slot を指すのでスロットの下に巨大なスペースが必要・・・と  \u003C/p>\n\u003Cp>うんうん、be quiet! Light Base 600 LX ならスペースに余裕があるね。なんかくっそデカイけど\u003C/p>\n\u003Cp>よくわからない情熱で無駄遣いしました。すみません。全部合わせても 5090 よりは安いけど  \u003C/p>\n\u003Cp>DynaDesk は他と比べて遅いし古いので ProxmoxBackupServer 用に回して、これを Proxmox のクラスタに混ぜることにしました\u003C/p>\n\u003Cp>※ 結局あとで中途半端なので3枚目は撤去しました\u003C/p>\n\u003Ch3>2026-02 OpenClaw 試す、常時稼働する\u003C/h3>\n\u003Cp>OpenClaw が流行って、試したくなり Proxmox を常時稼働して動かしていました  \u003C/p>\n\u003Ch3>2026-05 OpenClaw 死す、常時稼働やめる\u003C/h3>\n\u003Cp>なんかやらかした、とかではなく、恐ろしい電気代の前に停止しました。なんなら真夏で暑いし。せめて冬なら暖房と言い張れたんだけど  \u003C/p>\n\u003Cp>3台で 185W ほど消費していました\u003C/p>\n\u003Ch3>2025-09 常時稼働復帰する\u003C/h3>\n\u003Cp>QNAP も古くなってきたし、新機種もあまり変わり映えしない・もしくは目玉が飛び出るほど高額で、Proxmox でなんとかならんかなと思い始めて色々試していました\u003C/p>\n\u003Cp>そもそも今時みんなクラウドストレージに保存するので NAS の価値もニッチになり高くならざるを得ませんね、時代の流れや\u003C/p>\n\u003Cul>\n\u003Cli>Samba -&gt; TrueNAS\u003C/li>\n\u003Cli>QVR Pro -&gt; Frigate\u003C/li>\n\u003Cli>UPS\u003C/li>\n\u003C/ul>\n\u003Cp>Samba は特にいうことはないのですが、TrueNAS で QNAP で行っていたような S3, GoogleDrive, OneDrive への定期バックアップができたのがよかったですね\u003C/p>\n\u003Cp>QNAP のときは Raid0 だったのですが、過剰な気がしたので別な node に2台 TrueNAS を立てて replica を作りました、メインは NMVe サブは SATA SSD  \u003C/p>\n\u003Cp>QVR Pro は Surveillance Station のころからお世話になっていて移行できる気もあまりなかったのですが、Claude Code 先生と色々試しているうちにいけそうだなとということで移動\u003C/p>\n\u003Cp>目標は QNAP の置き換えだったので、無事全機能を置き換えて、入れ替えることができました\u003Cbr>消費電力的には常時 +100W くらいで痛いですが、これ以上は GPU Server を止めて intel 機にするくらいしかないかなと思っています\u003C/p>\n"}],single:true,page:1,total:1,previous:"",next:"2020/02/11/ReverseProxyHttps",path:"2026/09/19/2026-09-19",tags:[{label:"Diary",count:3,path:"blog/tags/Diary"},{label:"Docker",count:4,path:"blog/tags/Docker"},{label:"Hexo",count:1,path:"blog/tags/Hexo"},{label:"Node.js",count:2,path:"blog/tags/Node.js"},{label:"Proxmox",count:1,path:"blog/tags/Proxmox"},{label:"QNAP",count:6,path:"blog/tags/QNAP"},{label:"React",count:1,path:"blog/tags/React"},{label:"Study",count:1,path:"blog/tags/Study"},{label:"TypeScript",count:1,path:"blog/tags/TypeScript"},{label:"Unity",count:6,path:"blog/tags/Unity"},{label:"VRM",count:1,path:"blog/tags/VRM"},{label:"Web",count:4,path:"blog/tags/Web"},{label:"WebRtc",count:1,path:"blog/tags/WebRtc"}],months:[{label:"2026/09",count:1,path:"archives/2026/09"},{label:"2020/02",count:1,path:"archives/2020/02"},{label:"2019/12",count:3,path:"archives/2019/12"},{label:"2019/11",count:1,path:"archives/2019/11"},{label:"2019/10",count:1,path:"archives/2019/10"},{label:"2019/09",count:3,path:"archives/2019/09"},{label:"2019/02",count:1,path:"archives/2019/02"},{label:"2018/03",count:1,path:"archives/2018/03"},{label:"2017/10",count:1,path:"archives/2017/10"},{label:"2017/05",count:2,path:"archives/2017/05"},{label:"2017/03",count:5,path:"archives/2017/03"}]},uses:{params:["path"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
